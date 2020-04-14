@@ -163,6 +163,8 @@ T& radix_tree<K, T>::operator[] (const K &lhs)
     return it->second;
 
 }
+
+
 template <typename K, typename T>
 radix_tree_node<K, T>* radix_tree<K, T>::append(radix_tree_node<K, T> *parent, const value_type &val)
 {
@@ -274,6 +276,7 @@ radix_tree_node<K, T>* radix_tree<K, T>::prepend(radix_tree_node<K, T> *node, co
         return node_c;
     }
 }
+
 template <typename K, typename T>
 std::pair<typename radix_tree<K, T>::iterator, bool> radix_tree<K, T>::insert(const value_type &val)
 {
@@ -350,4 +353,5 @@ radix_tree_node<K, T>* radix_tree<K, T>::find_node(const K &key, radix_tree_node
 
     return node;
 }
+
 #endif // RADIX_TREE_HPP
