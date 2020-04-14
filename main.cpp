@@ -14,7 +14,9 @@ void insert(vector<string> config,map<int,string> &m) {
 	string server;
 	string record;
 	string::size_type it;
+
 	cout<<"    " <<"Reading config file"<<"\n";
+	
 	for(int i=0;i<config.size();i++){
 		record=config[i];
 		it=record.find("=");
@@ -27,7 +29,9 @@ void insert(vector<string> config,map<int,string> &m) {
 		m[i]=server;
 		cout<<"    " <<addr<<"->"<<server<<"\n";
 	}
+
 	cout<<"    " <<"-------------------------"<<"\n";
+
 }
 
 void findRoute(std::string key,map<int,string> m)
@@ -41,6 +45,7 @@ void findRoute(std::string key,map<int,string> m)
     } else {
         std::cout << "Could not find the server" << std::endl;
     }
+
 }
 
 
@@ -50,16 +55,17 @@ int main()
 	string line;
 	vector<string> config;
 	map<int,string> m;
+
 	while(getline(inFile,line))
 		config.push_back(line);
 	inFile.close();
-    insert(config,m);
+    	insert(config,m);
 
-    findRoute("customer1.us.ca.sfo",m);
-    findRoute("customer1.us.ca.sjc",m);
-    findRoute("customer2.us.tx.dfw",m);
-    findRoute("customer2.cn.tw.tai",m);
-    findRoute("customer10.us.ny.nyc",m);
+    	findRoute("customer1.us.ca.sfo",m);
+    	findRoute("customer1.us.ca.sjc",m);
+    	findRoute("customer2.us.tx.dfw",m);
+    	findRoute("customer2.cn.tw.tai",m);
+    	findRoute("customer10.us.ny.nyc",m);
 
-    return EXIT_SUCCESS;
+    	return EXIT_SUCCESS;
 }

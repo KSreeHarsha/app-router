@@ -49,5 +49,4 @@ radix_tree_node<K, T>::~radix_tree_node()
     delete m_value;
 }
 
-
 #endif // RADIX_TREE_NODE_HPP
